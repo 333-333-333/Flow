@@ -1,5 +1,5 @@
-##Flow
-#Conoce más de tus gustos musicales
+# **Flow** : _Conoce más de tus gustos musicales_
+
 
 You can use the [editor on GitHub](https://github.com/333-333-333/wave/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
