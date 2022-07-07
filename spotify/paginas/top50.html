@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+{% load static %}
+<html>
+	<head>
+		<title>{{nombre_usuario}}, tu análisis gracias a FLow.</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css'%}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="#top">Inicio</a></li>
+					<li><a href="#work">Top {{cantidad_canciones}}</a></li>
+					<li><a href="#portfolio">Análisis</a></li>
+				</ul>
+			</nav>
+
+		<!-- Home -->
+			<article id="top" class="wrapper style1">
+				<div class="container">
+					<div class="row">
+						<div class="col-4 col-5-large col-12-medium">
+							<span class="image fit"><img src="{{foto_usuario}}" alt="" /></span>
+						</div>
+						<div class="col-8 col-7-large col-12-medium">
+							<header>
+								<h1>Hola, <strong>{{nombre_usuario}}</strong>.</h1>
+							</header>
+							<p>Ese es el análisis de tu <strong>top {{cantidad_canciones}} de canciones.</strong>.</p>
+							<a href="#work" class="button large scrolly">Veamos!</a>
+						</div>
+					</div>
+				</div>
+			</article>
+
+		<!-- Work -->
+			<article id="work" class="wrapper style2">
+				<div class="container">
+					<header>
+						<h1><strong>Tu top {{cantidad_canciones}}:</strong></h1>
+						<div class="row aln-center">
+							<div class="col-4 col-6-medium col-12-small">
+									<h3><strong>Título</strong></h3>
+							</div>
+							<div class="col-4 col-6-medium col-12-small">
+									<h3><strong>Artista</strong></h3>
+							</div>
+							<div class="col-4 col-6-medium col-12-small">
+									<h3><strong>Portada,</strong></h3>
+									<p>(Con redirección a las canciones)</p>
+							</div>
+						</div>
+
+					</header>
+					<div class = "container medium">
+						{% for titulo, artista, foto, link in canciones%}
+							<p>
+							<div class="row aln-center">
+								<div class="col-4 col-6-medium col-12-small">
+										<h4><strong>{{titulo}}</strong></h4>
+								</div>
+								<div class="col-4 col-6-medium col-12-small">
+										<h4>{{artista}}</h4>
+								</div>
+								<div class="col-4 col-6-medium col-12-small">
+										<a href="{{link}}""><img src="{{foto}}" width="150" height="150"> </a>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+					<footer>
+						<p><strong>De estas canciones, {{canciones_en_mayor}} están en modalidad mayor, y {{canciones_en_menor}} están en modalidad menor.</strong></p>
+					</footer>
+				</div>
+			</article>
+
+		<!-- Portfolio -->
+			<article id="portfolio" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h1><strong>Tus canciones son en promedio...</strong></h1>
+					</header>
+					<div class="row">
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<img src="{% static 'images/felicidad.png' %}" width="150" height="150" />
+								<h3>{{felices}}% felices.</h3>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<img src="{% static 'images/rayo.png' %}" width="150" height="150" />
+								<h3>{{energeticas}}% energéticas.</h3>
+			
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<img src="{% static 'images/bailable.jpg' %}"  width="150" height="150" />
+								<h3>{{bailables}}% bailables.</h3>
+								
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								><img src="{% static 'images/instrumentos.jpg' %}" alt=""  width="150" height="150" />
+								<h3>{{instrumentales}}% instrumentales.</h3>
+								<h3> </h3>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<img src="{% static 'images/cantando.png' %}"  width="150" height="150" />
+								<h3>{{cantables}}% cantables.</h3>
+								<h3> </h3>
+						
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<img src="{% static 'images/concierto.png' %}" width="150" height="150" />
+								<h3>{{concertividad}}% con vibras de concierto.</h3>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<img src="{% static 'images/acustividad.png' %}" width="150" height="150"/>
+								<h3>{{acustividad}}% acústicas.</h3>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+						</div>
+					</div>
+					<footer>
+
+						<a href="https://github.com/333-333-333/Flow" class="button large scrolly">Mira nuestro repositorio de GitHub.</a>
+					</footer>
+				</div>
+			</article>
+
+		<!-- Contact -->
+			<article id="contact" class="wrapper style4">
+				
+						<div class="col-12">
+							<hr />
+							<h3>Links de utilidad.</h3>
+							<ul class="social">
+								<li><a href="https://github.com/333-333-333/Flow" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							</ul>
+							<hr />
+						</div>
+					</div>
+				</div>
+			</article>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>

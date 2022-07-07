@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <h1>
+            Hola, {{nombre_usuario}}
+        </h1>
+        <img src="{{foto_usuario}}">
+        <h2>
+            Tu top 50.
+        </h2>
+        <p>
+            {% for cancion, foto, link in canciones %}
+                    <p>{{cancion}} <a href="{{link}}""><img src="{{foto}}"> </a>
+            {% endfor %}
+        </p>
+        <p>
+            De tus canciones, {{canciones_en_mayor}} son en modalidad mayor, y {{canciones_en_menor}} están en modalidad menor.
+        </p>
+    </body>
+
+</html>
