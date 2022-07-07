@@ -15,6 +15,6 @@ Y mucho más.
 
 # Entra aquí.
 
-[Link](bruselas.ceisufro.cl/flow) and ![Image](src)
+[Link](bruselas.ceisufro.cl/flow) 
 ```
 
